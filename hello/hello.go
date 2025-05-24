@@ -16,7 +16,7 @@ func Hello(name, lang string) string {
 	}
 	return greetPrefix(lang) + name
 }
-func greetPrefix(lang string) string {
+func greetPrefix(lang string) (prefix string) {
 	prefix := englishPrefix
 	switch lang {
 	case hindi:
@@ -26,7 +26,7 @@ func greetPrefix(lang string) string {
 	default:
 		prefix = englishPrefix
 	}
-	return prefix
+	return
 
 }
 
