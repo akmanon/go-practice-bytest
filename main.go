@@ -1,12 +1,17 @@
 package main
 
 import (
+	"log"
 	"os"
 
-	"github.com/akmanon/go-practice-bytest/mocking"
+	"github.com/akmanon/go-practice-bytest/blogposts"
 )
 
 func main() {
-	sleeper := mocking.DefaultSleeper{}
-	mocking.Countdown(os.Stdout, &sleeper)
+	posts, err := blogposts.NewBlogPosts(os.DirFS(""))
+	if err != nil {
+		log.Fatal(err)
+
+	}
+	log.Println(posts)
 }
